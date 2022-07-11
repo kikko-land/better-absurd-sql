@@ -22,7 +22,7 @@ You can check out the [example project](https://github.com/jlongster/absurd-exam
 First you install the packages:
 
 ```
-yarn add @jlongster/sql.js @trong-orm/better-absurd-sql
+yarn add @trong-orm/sql.js @trong-orm/better-absurd-sql
 ```
 
 Right now you need to use my fork of `sql.js`, but I'm going to open a PR and hopefully get it merged. The changes are minimal.
@@ -46,7 +46,7 @@ init();
 Then in `index.worker.js` do this:
 
 ```js
-import initSqlJs from '@jlongster/sql.js';
+import initSqlJs from '@trong-orm/sql.js';
 import { SQLiteFS } from '@trong-orm/better-absurd-sql';
 import IndexedDBBackend from '@trong-orm/better-absurd-sql/dist/indexeddb-backend';
 
