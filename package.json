@@ -1,5 +1,5 @@
 {
-  "name": "better-absurd-sql",
+  "name": "@trong-orm/better-absurd-sql",
   "version": "0.0.54",
   "main": "./dist/index.js",
   "scripts": {
