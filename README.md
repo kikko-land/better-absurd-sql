@@ -1,3 +1,8 @@
+> This project is a fork of [absurd-sql](https://github.com/jlongster/absurd-sql). Big thanks to James!
+> But for now absurd-sql looks more abandoned than live. I also asked James for the access, but he didn't answer unfortunately, :(.
+> And it's ok, he has not so much free time, I totally understand. So I managed to fork it and to continue work on it.
+> If James start merging PRs(I hope so!), I will close this repo.
+
 This is an absurd project.
 
 It implements a backend for [sql.js](https://github.com/sql-js/sql.js/) (sqlite3 compiled for the web) that treats IndexedDB like a disk and stores data in blocks there. That means your sqlite3 database is persisted. And not in the terrible way of reading and writing the whole image at once -- it reads and writes your db in small chunks.
