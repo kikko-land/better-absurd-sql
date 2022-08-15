@@ -22,7 +22,7 @@ You can check out the [example project](https://github.com/jlongster/absurd-exam
 First you install the packages:
 
 ```
-yarn add @trong-orm/sql.js @trong-orm/better-absurd-sql
+yarn add @kikko-land/sql.js @kikko-land/better-absurd-sql
 ```
 
 Right now you need to use my fork of `sql.js`, but I'm going to open a PR and hopefully get it merged. The changes are minimal.
@@ -30,7 +30,7 @@ Right now you need to use my fork of `sql.js`, but I'm going to open a PR and ho
 absurd-sql **must** run in a worker. This is fine because you really shouldn't be blocking the main thread anyway. So on the main thread, do this:
 
 ```js
-import { initBackend } from '@trong-orm/better-absurd-sql/dist/indexeddb-main-thread';
+import { initBackend } from '@kikko-land/better-absurd-sql/dist/indexeddb-main-thread';
 
 function init() {
   let worker = new Worker(new URL('./index.worker.js', import.meta.url));
@@ -46,9 +46,9 @@ init();
 Then in `index.worker.js` do this:
 
 ```js
-import initSqlJs from '@trong-orm/sql.js';
-import { SQLiteFS } from '@trong-orm/better-absurd-sql';
-import IndexedDBBackend from '@trong-orm/better-absurd-sql/dist/indexeddb-backend';
+import initSqlJs from '@kikko-land/sql.js';
+import { SQLiteFS } from '@kikko-land/better-absurd-sql';
+import IndexedDBBackend from '@kikko-land/better-absurd-sql/dist/indexeddb-backend';
 
 async function run() {
   let SQL = await initSqlJs({ locateFile: (file) => file });

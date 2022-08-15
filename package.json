@@ -1,6 +1,6 @@
 {
-  "name": "@trong-orm/better-absurd-sql",
-  "version": "0.0.54",
+  "name": "@kikko-land/better-absurd-sql",
+  "version": "0.0.55",
   "main": "./dist/index.js",
   "scripts": {
     "build": "rm -rf dist && rollup -c rollup.config.js",
