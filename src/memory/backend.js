@@ -116,8 +116,4 @@ export default class MemoryBackend {
   getFile(filename) {
     return this.files[filename];
   }
-
-  startProfile() {}
-
-  stopProfile() {}
 }

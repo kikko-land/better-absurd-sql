@@ -139,17 +139,9 @@ async function populate(count, { timings = true } = {}) {
 
   q.clear(db, output);
 
-  if (recordProfile) {
-    sqlFS.backend.startProfile();
-  }
-
   // Only reason this needs to `await` is for the raw idb
   // implementation; sqlite would be sync
   await q.populate(db, count, output, timings ? outputTiming : () => {});
-
-  if (recordProfile) {
-    sqlFS.backend.stopProfile();
-  }
 
   if (!useRawIDB) {
     let { node } = SQL.FS.lookupPath(`/blocked/${dbName}`);
@@ -191,15 +183,8 @@ async function sumAll({ clear = true } = {}) {
 
   let q = useRawIDB ? rawIDBQueries : queries;
   let db = await getDatabase();
-  if (recordProfile) {
-    sqlFS.backend.startProfile();
-  }
 
   await q.sumAll(db, output, outputTiming);
-
-  if (recordProfile) {
-    sqlFS.backend.stopProfile();
-  }
 }
 
 async function randomReads({ clear = true } = {}) {
@@ -209,15 +194,8 @@ async function randomReads({ clear = true } = {}) {
 
   let q = useRawIDB ? rawIDBQueries : queries;
   let db = await getDatabase();
-  if (recordProfile) {
-    sqlFS.backend.startProfile();
-  }
 
   await q.randomReads(db, output, outputTiming);
-
-  if (recordProfile) {
-    sqlFS.backend.stopProfile();
-  }
 }
 
 async function prepBench() {
